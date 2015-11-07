@@ -18,8 +18,6 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
-        <behavior author="Scirra" id="custom" version="1">Custom Movement</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
     </used-behaviors>
     <used-effects />
@@ -67,14 +65,9 @@
         </object-type>
         <object-type name="Player" sid="7769317872554959">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Platform" sid="3070572146212311">
-                    <behavior id="Platform" />
-                </behavior-type>
-                <behavior-type name="CustomMovement" sid="306790692934917">
-                    <behavior id="custom" />
-                </behavior-type>
-            </behaviors>
+            <instance-variables>
+                <instance-variable name="Health" sid="6578393107418624" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="5">
                     <frame duration="1" hotspotX="0.514286" hotspotY="0.512821" />

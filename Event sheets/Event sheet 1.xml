@@ -61,13 +61,18 @@
         </event-block>
         <comment>If the player falls off the bottom of the screen, restart the game.</comment>
         <event-block sid="4308788541318451">
-            <conditions />
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5461538517341171" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
             <actions>
                 <action id="-21" name="Reset global variables" sid="5767440996399434" type="System" />
                 <action id="-26" name="Restart layout" sid="247326816256516" type="System" />
             </actions>
         </event-block>
-        <comment>Due to the acceleration of the platform movement, we need to do some tweaks to make sure the player doesn&apos;t gradually get pushed off to the left of the screen over time.</comment>
         <event-block any="1" sid="6720471992875079">
             <conditions>
                 <condition id="4" name="On key code pressed" sid="6277294278821854" type="Keyboard">
