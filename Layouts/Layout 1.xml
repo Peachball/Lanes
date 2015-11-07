@@ -4,8 +4,8 @@
     <sid>335611983318497</sid>
     <event-sheet>Event sheet 1</event-sheet>
     <size>
-        <width>630</width>
-        <height>360</height>
+        <width>1280</width>
+        <height>1024</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -50,10 +50,10 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>0</x>
-                        <y>0</y>
+                        <y>-5</y>
                         <z>0</z>
-                        <width>1260</width>
-                        <height>360</height>
+                        <width>1280</width>
+                        <height>1024</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -106,51 +106,14 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>105</x>
-                        <y>183</y>
+                        <x>247</x>
+                        <y>350</y>
                         <z>0</z>
-                        <width>35</width>
-                        <height>39</height>
+                        <width>1782</width>
+                        <height>1174</height>
                         <depth>0</depth>
-                        <hotspotX>0.514285743</hotspotX>
-                        <hotspotY>0.512820542</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
-                <instance type="Block" uid="2">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <hotspot>Top-left</hotspot>
-                    </properties>
-                    <behavior-instances>
-                        <behavior-instance type="Solid">
-                            <properties>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="Bullet">
-                            <properties>
-                                <speed>300</speed>
-                                <acceleration>0</acceleration>
-                                <gravity>0</gravity>
-                                <bounce-off-solids>No</bounce-off-solids>
-                                <set-angle>No</set-angle>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>30</x>
-                        <y>243</y>
-                        <z>0</z>
-                        <width>993</width>
-                        <height>117</height>
-                        <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.518750012</hotspotX>
+                        <hotspotY>0.521875024</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -190,7 +153,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>4</x>
-                        <y>2</y>
+                        <y>-3</y>
                         <z>0</z>
                         <width>200</width>
                         <height>30</height>
