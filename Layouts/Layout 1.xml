@@ -2,10 +2,10 @@
 <c2layout>
     <name>Layout 1</name>
     <sid>335611983318497</sid>
-    <event-sheet>Event sheet 1</event-sheet>
+    <event-sheet></event-sheet>
     <size>
-        <width>630</width>
-        <height>360</height>
+        <width>1280</width>
+        <height>1024</height>
     </size>
     <margins>
         <horizontal>500</horizontal>
@@ -197,6 +197,28 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Box" uid="6">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>393</x>
+                        <y>215</y>
+                        <z>0</z>
+                        <width>76</width>
+                        <height>70</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50181818</hotspotX>
+                        <hotspotY>0.50181818</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
