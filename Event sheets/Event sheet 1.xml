@@ -48,9 +48,13 @@
                 <action id="0" name="Set text" sid="4305043338334936" type="DistanceDisplay">
                     <param id="0" name="Text">round(TotalDistance)</param>
                 </action>
-                <action id="-23" name="Move at angle" sid="6638110692971757" type="DistanceDisplay">
+                <action id="-23" name="Move at angle" sid="366918968958033" type="TiledBackground">
                     <param id="0" name="Angle">180</param>
-                    <param id="1" name="Distance">100</param>
+                    <param id="1" name="Distance">5</param>
+                </action>
+                <action id="-10" name="Add to" sid="6599144911191055" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">5</param>
                 </action>
             </actions>
         </event-block>
