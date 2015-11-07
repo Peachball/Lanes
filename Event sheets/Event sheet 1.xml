@@ -20,17 +20,6 @@
                 </action>
             </actions>
         </event-block>
-        <comment>While on floor, keep holding the &quot;run right&quot; control, so the character keeps running.</comment>
-        <event-block sid="8292398771844221">
-            <conditions>
-                <condition behavior="Platform" id="2" name="Is on floor" sid="7630277787439147" type="Player" />
-            </conditions>
-            <actions>
-                <action behavior="Platform" id="7" name="Simulate control" sid="9470994365727254" type="Player">
-                    <param id="0" name="Control">1</param>
-                </action>
-            </actions>
-        </event-block>
         <comment>Keep incrementing the current and total distances, and display the total distance in a text object.</comment>
         <event-block sid="5377475223263495">
             <conditions>
@@ -79,23 +68,6 @@
             </actions>
         </event-block>
         <comment>Due to the acceleration of the platform movement, we need to do some tweaks to make sure the player doesn&apos;t gradually get pushed off to the left of the screen over time.</comment>
-        <event-block sid="7931959820964983">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="6788178772139774" type="Player">
-                    <param id="0" name="Comparison">2</param>
-                    <param id="1" name="X co-ordinate">105</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-1" name="Set X" sid="3413384456031292" type="Player">
-                    <param id="0" name="X">Self.X + 5 * dt</param>
-                </action>
-                <action behavior="CustomMovement" id="2" name="Set speed" sid="9162426946120666" type="Player">
-                    <param id="0" name="Which">0</param>
-                    <param id="1" name="Speed">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block any="1" sid="6720471992875079">
             <conditions>
                 <condition id="4" name="On key code pressed" sid="6277294278821854" type="Keyboard">
@@ -116,7 +88,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Set Y" sid="3218868602113753" type="Player">
-                    <param id="0" name="Y">20</param>
+                    <param id="0" name="Y">150</param>
                 </action>
             </actions>
         </event-block>
@@ -128,7 +100,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Set Y" sid="5354036489827334" type="Player">
-                    <param id="0" name="Y">30</param>
+                    <param id="0" name="Y">250</param>
                 </action>
             </actions>
         </event-block>
