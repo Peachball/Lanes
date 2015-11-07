@@ -53,7 +53,7 @@
                         <y>-5</y>
                         <z>0</z>
                         <width>1280</width>
-                        <height>1024</height>
+                        <height>1021</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -106,8 +106,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>247</x>
-                        <y>350</y>
+                        <x>238</x>
+                        <y>356</y>
                         <z>0</z>
                         <width>1782</width>
                         <height>1174</height>
@@ -156,7 +156,7 @@
                         <y>-3</y>
                         <z>0</z>
                         <width>200</width>
-                        <height>30</height>
+                        <height>27</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
