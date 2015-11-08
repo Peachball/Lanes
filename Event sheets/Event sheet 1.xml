@@ -14,7 +14,7 @@
         <variable constant="0" name="OverallSpeed" sid="5808535399195591" static="0" type="number">400</variable>
         <variable constant="0" name="Pos" sid="4779558067367813" static="0" type="number">1</variable>
         <variable constant="0" name="FireBullets" sid="8982827663232357" static="0" type="number">0</variable>
-        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">1</variable>
+        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">5</variable>
         <event-block sid="1838186387418688">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="6786200720504451" type="System">
