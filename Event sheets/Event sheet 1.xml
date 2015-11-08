@@ -283,18 +283,6 @@
                         </action>
                     </actions>
                 </event-block>
-                <event-block sid="4079109446470227">
-                    <conditions>
-                        <condition id="4" name="On key code pressed" sid="7684128833377572" type="Keyboard">
-                            <param id="0" name="Keycode">72</param>
-                        </condition>
-                    </conditions>
-                    <actions>
-                        <action id="-2" name="Go to layout" sid="3066558075261871" type="System">
-                            <param id="0" name="Layout">Help</param>
-                        </action>
-                    </actions>
-                </event-block>
                 <event-block sid="4823424753034271">
                     <conditions>
                         <condition id="-14" name="Compare variable" sid="7054683834469708" type="System">
@@ -382,6 +370,24 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="182717050479168">
+                    <conditions>
+                        <condition id="4" name="On key code pressed" sid="3980378838365648" type="Keyboard">
+                            <param id="0" name="Keycode">38</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="9236568261158395" type="System">
+                            <param id="0" name="Variable">Pos</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="806785328989052" type="System">
+                            <param id="0" name="Variable">Pos</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
                 <event-block sid="6856634992964434">
                     <conditions>
                         <condition id="4" name="On key code pressed" sid="9075840726364989" type="Keyboard">
@@ -395,6 +401,24 @@
                     </conditions>
                     <actions>
                         <action id="-10" name="Add to" sid="7091537027237348" type="System">
+                            <param id="0" name="Variable">Pos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6376034173837416">
+                    <conditions>
+                        <condition id="4" name="On key code pressed" sid="7360473736511356" type="Keyboard">
+                            <param id="0" name="Keycode">40</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="3733913223486723" type="System">
+                            <param id="0" name="Variable">Pos</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7813406636933488" type="System">
                             <param id="0" name="Variable">Pos</param>
                             <param id="1" name="Value">1</param>
                         </action>
