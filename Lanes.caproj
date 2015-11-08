@@ -53,11 +53,9 @@
         </object-type>
         <object-type name="Player" sid="7769317872554959">
             <plugin id="Sprite" />
-            <behaviors>
-                <behavior-type name="Platform" sid="3070572146212311">
-                    <behavior id="Platform" />
-                </behavior-type>
-            </behaviors>
+            <instance-variables>
+                <instance-variable name="Health" sid="6578393107418624" type="number" />
+            </instance-variables>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="5">
                     <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\Admin\Documents\GitHub\Lanes\Animations\Player\Default\New Piskel.gif">
