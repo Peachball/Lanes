@@ -1,1 +1,5 @@
-Lanes.uistate.xml
+./Lanes.capx.autosave
+./Lanes.capx.backup1
+*.swp
+*~
+*.uistate.xml
