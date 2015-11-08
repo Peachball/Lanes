@@ -1,7 +1,10 @@
 Game Over - see high scores with names
-	Done with gameover part, need highscore
-Background
+	Done with gameover part, need highscore (too lazy to change...) - ik it looks ugly
+Background DONE
 Block Spacing
 Shoot monsters - sideways
 Powerups3
 Shoot monsters - up
+
+Add box spawns to the right of screen
+vim parader

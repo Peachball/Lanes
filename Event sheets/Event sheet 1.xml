@@ -9,11 +9,6 @@
         <variable constant="0" name="Text" sid="6429490347087171" static="0" type="text">GAME OVER</variable>
         <variable constant="0" name="YesOrNo" sid="1278676791248141" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">5</variable>
-        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
-        <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
-        <comment>Keep incrementing the current and total distances, and display the total distance in a text object.</comment>
-        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
-        <comment>If the player falls off the bottom of the screen, restart the game.</comment>
         <event-block sid="1838186387418688">
             <conditions>
                 <condition id="-14" name="Compare variable" sid="6786200720504451" type="System">
@@ -27,10 +22,16 @@
                     <param id="0" name="Visibility">1</param>
                 </action>
                 <action id="-15" name="Set visible" sid="1169689749312149" type="Score">
-                    <param id="0" name="Visibility">0</param>
+                    <param id="0" name="Visibility">1</param>
                 </action>
                 <action id="-15" name="Set visible" sid="7303338817008999" type="PressAKey">
-                    <param id="0" name="Visibility">0</param>
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="2" name="Set visible" sid="8288385987015847" type="List">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="1441911657598537" type="HSText">
+                    <param id="0" name="Visibility">1</param>
                 </action>
             </actions>
         </event-block>
@@ -52,6 +53,12 @@
                 <action id="-15" name="Set visible" sid="5911069096104189" type="PressAKey">
                     <param id="0" name="Visibility">0</param>
                 </action>
+                <action id="2" name="Set visible" sid="6505065363355396" type="List">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="5882580707128202" type="HSText">
+                    <param id="0" name="Visibility">0</param>
+                </action>
             </actions>
             <sub-events>
                 <event-block sid="8786049637894836">
@@ -65,7 +72,22 @@
                         <action id="-15" name="Set visible" sid="6779188396003137" type="GAMEOVER">
                             <param id="0" name="Visibility">0</param>
                         </action>
+                        <action id="1" name="Get item" sid="2551510175034881" type="LocalStorage">
+                            <param id="0" name="Key">&quot;HighScores&quot;</param>
+                        </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="4475524228035445">
+                            <conditions>
+                                <condition id="14" name="Is processing gets" sid="3540055194322527" type="LocalStorage" />
+                            </conditions>
+                            <actions>
+                                <action id="11" name="Load" sid="2485380827194449" type="HighScores">
+                                    <param id="0" name="JSON">LocalStorage.ItemValue</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="8932932219245225">
                     <conditions>
@@ -110,10 +132,34 @@
                         <action id="0" name="Set text" sid="4503899660660835" type="DistanceDisplay">
                             <param id="0" name="Text">TotalDistance</param>
                         </action>
+                        <action id="10" name="Insert" sid="9530657122552828" type="HighScores">
+                            <param id="0" name="Value">TotalDistance</param>
+                            <param id="1" name="Index">0</param>
+                            <param id="2" name="Axis">0</param>
+                        </action>
+                        <action id="8" name="Sort" sid="8168130892460129" type="HighScores">
+                            <param id="0" name="Axis">0</param>
+                        </action>
                         <action id="-21" name="Reset global variables" sid="5767440996399434" type="System" />
                         <action id="-9" name="Set value" sid="4661572667700222" type="System">
                             <param id="0" name="Variable">YesOrNo</param>
                             <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="11" name="Clear" sid="5513166590294569" type="List" />
+                        <action id="7" name="Add item" sid="5696872248215515" type="List">
+                            <param id="0" name="Text">&quot;1:&quot;&amp;HighScores.Back</param>
+                        </action>
+                        <action id="7" name="Add item" sid="9004728493362696" type="List">
+                            <param id="0" name="Text">&quot;2:&quot;&amp;HighScores.At(HighScores.Width-2)</param>
+                        </action>
+                        <action id="7" name="Add item" sid="4131825212583836" type="List">
+                            <param id="0" name="Text">&quot;3:&quot;&amp;HighScores.At(HighScores.Width-3)</param>
+                        </action>
+                        <action id="7" name="Add item" sid="8570215004022001" type="List">
+                            <param id="0" name="Text">&quot;4:&quot;&amp;HighScores.At(HighScores.Width-4)</param>
+                        </action>
+                        <action id="7" name="Add item" sid="5656477070211968" type="List">
+                            <param id="0" name="Text">&quot;5:&quot;&amp;HighScores.At(HighScores.Width-5)</param>
                         </action>
                     </actions>
                 </event-block>
@@ -293,6 +339,10 @@
                 <action id="-9" name="Set value" sid="2806648968633807" type="System">
                     <param id="0" name="Variable">YesOrNo</param>
                     <param id="1" name="Value">0</param>
+                </action>
+                <action id="0" name="Set item" sid="5330425426493177" type="LocalStorage">
+                    <param id="0" name="Key">&quot;HighScores&quot;</param>
+                    <param id="1" name="Value">HighScores.AsJSON</param>
                 </action>
                 <action id="-26" name="Restart layout" sid="1231605716004479" type="System" />
             </actions>

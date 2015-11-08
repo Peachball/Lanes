@@ -12,6 +12,8 @@
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="List" version="1">List</plugin>
+        <plugin author="Scirra" id="LocalStorage" version="1">Local storage</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -130,15 +132,22 @@
         <object-type name="PressAKey" sid="5972867810873012">
             <plugin id="Text" />
         </object-type>
+        <object-type name="HSText" sid="167957876729851">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="List" sid="7814057224474289">
+            <plugin id="List" />
+        </object-type>
+        <object-type name="LocalStorage" sid="3435670953844569">
+            <plugin id="LocalStorage" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
-        <layout>GAME OVER.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
-        <event-sheet>GAME OVER.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="4">
@@ -147,6 +156,7 @@
             </properties>
         </global-instance>
         <global-instance type="Keyboard" uid="5" />
+        <global-instance type="LocalStorage" uid="14" />
     </global-instances>
     <sounds-folder />
     <music-folder />

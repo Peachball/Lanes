@@ -40,7 +40,7 @@
                         <x>-4</x>
                         <y>-2</y>
                         <z>0</z>
-                        <width>3815</width>
+                        <width>5020</width>
                         <height>1040</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -165,7 +165,7 @@
                         <x>602</x>
                         <y>869</y>
                         <z>0</z>
-                        <width>253</width>
+                        <width>558</width>
                         <height>113</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
@@ -297,6 +297,57 @@
                         <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="HSText" uid="8">
+                    <properties>
+                        <text>High Scores:</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-48,400,0</font>
+                        <color>255,0,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>841.648193359</x>
+                        <y>586.372314453</y>
+                        <z>0</z>
+                        <width>401.313598633</width>
+                        <height>94.132080078</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="List" uid="13">
+                    <properties>
+                        <items></items>
+                        <tooltip></tooltip>
+                        <initial-visibility>Visible</initial-visibility>
+                        <enabled>Yes</enabled>
+                        <type>List box</type>
+                        <multi-select>No</multi-select>
+                        <auto-font-size>Yes</auto-font-size>
+                        <id-optional></id-optional>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>849.115478516</x>
+                        <y>651.793701172</y>
+                        <z>0</z>
+                        <width>261.679992676</width>
+                        <height>103.897155762</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                     </world>
                 </instance>
             </instances>
