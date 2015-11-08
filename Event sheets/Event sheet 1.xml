@@ -42,8 +42,8 @@
                     <param id="0" name="Text">round(TotalDistance)</param>
                 </action>
                 <action id="-23" name="Move at angle" sid="366918968958033" type="TiledBackground">
-                    <param id="0" name="Angle">180</param>
-                    <param id="1" name="Distance">5</param>
+                    <param id="0" name="Angle">90</param>
+                    <param id="1" name="Distance">0</param>
                 </action>
                 <action id="-10" name="Add to" sid="6599144911191055" type="System">
                     <param id="0" name="Variable">TotalDistance</param>
@@ -170,6 +170,18 @@
                 <action id="-3" name="Set position" sid="9659117015018891" type="Box">
                     <param id="0" name="X">1280</param>
                     <param id="1" name="Y">683</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2295819277795625">
+            <conditions>
+                <condition id="-18" name="On created" sid="73097907764989" type="Box" />
+                <condition id="-1" name="Every tick" sid="6318515048392878" type="System" />
+            </conditions>
+            <actions>
+                <action id="-23" name="Move at angle" sid="9653243171675128" type="Box">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">5</param>
                 </action>
             </actions>
         </event-block>
