@@ -1,0 +1,6 @@
+Game Over - see high scores with names
+Background
+Block Spacing
+Shoot monsters - sideways
+Powerups
+Shoot monsters - up

@@ -10,6 +10,7 @@
     <unique-id>mq4njje893h0</unique-id>
     <saved-with-version>21600</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
@@ -44,11 +45,6 @@
     <object-folder>
         <object-type name="TiledBackground" sid="5708643377834054">
             <plugin id="TiledBg" />
-            <behaviors>
-                <behavior-type name="Bullet" sid="7100848869643985">
-                    <behavior id="Bullet" />
-                </behavior-type>
-            </behaviors>
             <texture original-source="C:\Users\Chen\git\Codeday Construct\Files\final background thing.png" />
         </object-type>
         <object-type name="Player" sid="7769317872554959">
@@ -57,8 +53,21 @@
                 <instance-variable name="Health" sid="6578393107418624" type="number" />
             </instance-variables>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="5">
-                    <frame duration="1" hotspotX="0.522727" hotspotY="0.525" original-source="C:\Users\Chen\git\Codeday Construct\Animations\Player\Default\000.png" />
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="20">
+                    <frame duration="1" hotspotX="0.522222" hotspotY="0.525" original-source="C:\Users\Chen\Documents\frame-1.gif">
+                        <collision-poly>
+                            <point x="0.522222" y="0.484028" />
+                            <point x="0.50947" y="0.457639" />
+                            <point x="0.52298" y="0.444445" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.522222" hotspotY="0.525" original-source="C:\Users\Chen\Documents\frame-2.gif">
+                        <collision-poly>
+                            <point x="0.522223" y="0.467361" />
+                            <point x="0.517425" y="0.494445" />
+                            <point x="0.514899" y="0.471528" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
@@ -98,13 +107,38 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="GAMEOVER" sid="3646460057974506">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="line" sid="4869065195834915">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5317227402677802" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="YOULOST" sid="4538894785410824">
+            <plugin id="Text" />
+        </object-type>
+        <object-type global="1" name="HighScores" sid="7652112164435378">
+            <plugin id="Arr" />
+        </object-type>
+        <object-type name="Score" sid="2062024050949333">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="PressAKey" sid="5972867810873012">
+            <plugin id="Text" />
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>GAME OVER.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>GAME OVER.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Touch" uid="4">
