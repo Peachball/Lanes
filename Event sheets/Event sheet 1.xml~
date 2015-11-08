@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
+        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
+        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">600</variable>
+        <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
+        <event-block sid="8786049637894836">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6848267510187704" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2481459789396701" type="TiledBackground">
+                    <param id="0" name="Angle">180</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
+        <event-block sid="8932932219245225">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="8675745407636058" type="TiledBackground">
+                    <param id="0" name="Comparison">3</param>
+                    <param id="1" name="X co-ordinate">-Self.Width / 2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-1" name="Set X" sid="9689249207914055" type="TiledBackground">
+                    <param id="0" name="X">Self.X + Self.Width / 2</param>
+                </action>
+            </actions>
+        </event-block>
+        <comment>Keep incrementing the current and total distances, and display the total distance in a text object.</comment>
+        <event-block sid="5377475223263495">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="3294306374829814" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="4305043338334936" type="DistanceDisplay">
+                    <param id="0" name="Text">round(TotalDistance)</param>
+                </action>
+<<<<<<< HEAD
+                <action id="-23" name="Move at angle" sid="366918968958033" type="TiledBackground">
+                    <param id="0" name="Angle">180</param>
+                    <param id="1" name="Distance">5</param>
+                </action>
+                <action id="-10" name="Add to" sid="6599144911191055" type="System">
+                    <param id="0" name="Variable">TotalDistance</param>
+                    <param id="1" name="Value">5</param>
+=======
+            </actions>
+        </event-block>
+        <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
+        <event-block sid="3794797121226503">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="1754156950915027" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">NextBlock</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="3041061493350469" type="System">
+                    <param id="0" name="Variable">CurrentDistance</param>
+                    <param id="1" name="Value">NextBlock</param>
+>>>>>>> origin/surtaz
+                </action>
+            </actions>
+        </event-block>
+        <comment>Destroy blocks that go off the left of the screen so they don&apos;t keep taking up memory or CPU.</comment>
+        <comment>If the player falls off the bottom of the screen, restart the game.</comment>
+        <event-block sid="4308788541318451">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5461538517341171" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="5767440996399434" type="System" />
+                <action id="-26" name="Restart layout" sid="247326816256516" type="System" />
+            </actions>
+        </event-block>
+        <event-block any="1" sid="6720471992875079">
+            <conditions>
+                <condition id="4" name="On key code pressed" sid="6277294278821854" type="Keyboard">
+                    <param id="0" name="Keycode">49</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="5884294263571456" type="Player">
+                    <param id="0" name="Y">50</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2320086941532443">
+            <conditions>
+                <condition id="4" name="On key code pressed" sid="5683475167724306" type="Keyboard">
+                    <param id="0" name="Keycode">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="3218868602113753" type="Player">
+                    <param id="0" name="Y">150</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="9052907842268431">
+            <conditions>
+                <condition id="4" name="On key code pressed" sid="4905454528300913" type="Keyboard">
+                    <param id="0" name="Keycode">51</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Set Y" sid="5354036489827334" type="Player">
+                    <param id="0" name="Y">250</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
