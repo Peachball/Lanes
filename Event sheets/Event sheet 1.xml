@@ -4,13 +4,14 @@
     <name>Event sheet 1</name>
     <events>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
-        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
+        <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="SubRNGJESUS" sid="5302964525873012" static="0" type="number">0</variable>
         <variable constant="0" name="RNGJESUS" sid="6821668473907434" static="0" type="number">0</variable>
         <variable constant="0" name="Text" sid="6429490347087171" static="0" type="text">GAME OVER</variable>
         <variable constant="0" name="YesOrNo" sid="1278676791248141" static="0" type="number">0</variable>
-        <variable comment="Lowest Possible rate that you can survive in" constant="1" name="LOWESTDELAY" sid="3924802043861896" static="0" type="number">0.2</variable>
+        <variable comment="Lowest Possible rate that you can survive in" constant="1" name="LOWESTDELAY" sid="3924802043861896" static="0" type="number">0.1</variable>
         <variable comment="Number of seconds till monsters spawn" constant="0" name="TimeTillMonsters" sid="9499865665837142" static="0" type="number">10000</variable>
         <variable comment="Number of seconds till ammo boxes spawn" constant="0" name="TimeTillAmmo" sid="3678653866682308" static="0" type="number">5</variable>
+        <variable constant="0" name="OverallSpeed" sid="5808535399195591" static="0" type="number">400</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">5</variable>
         <event-block sid="1838186387418688">
             <conditions>
@@ -77,6 +78,9 @@
                         </action>
                         <action id="1" name="Get item" sid="2551510175034881" type="LocalStorage">
                             <param id="0" name="Key">&quot;HighScores&quot;</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="4823785841010614" type="KillBlock">
+                            <param id="0" name="Speed">OverallSpeed</param>
                         </action>
                     </actions>
                     <sub-events>
@@ -235,7 +239,11 @@
                             <param id="3" name="Y">Player.Y</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="3909160002545183" type="Bullet">
-                            <param id="0" name="Speed">400</param>
+                            <param id="0" name="Speed">OverallSpeed</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7586499650305132" type="Player">
+                            <param id="0" name="Instance variable">Ammo</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -288,6 +296,9 @@
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="4097520541322948" type="KillBlock">
                                     <param id="0" name="Angle">180</param>
                                 </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="2710325560258642" type="KillBlock">
+                                    <param id="0" name="Speed">OverallSpeed</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="909515979323709">
@@ -317,6 +328,9 @@
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="2188459081944809" type="KillBlock">
                                     <param id="0" name="Angle">180</param>
                                 </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="6067003075783849" type="KillBlock">
+                                    <param id="0" name="Speed">OverallSpeed</param>
+                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="3841455632887827">
@@ -340,6 +354,9 @@
                                 </action>
                                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="2460427160873842" type="KillBlock">
                                     <param id="0" name="Angle">180</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="659094451178379" type="KillBlock">
+                                    <param id="0" name="Speed">OverallSpeed</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -372,31 +389,18 @@
                                     <param id="0" name="Variable">RNGJESUS</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="6661784779417574" type="System">
+                                    <param id="0" name="Variable">SubRNGJESUS</param>
+                                    <param id="1" name="Value">random(1,100)</param>
+                                </action>
                             </actions>
                             <sub-events>
-                                <variable comment="Should be a random number" constant="0" name="randomness" sid="6389074141086019" static="0" type="number">0</variable>
-                                <event-block sid="6265421815579956">
-                                    <conditions>
-                                        <condition id="-23" name="While" sid="1141966531128031" type="System" />
-                                        <condition id="-14" name="Compare variable" sid="822512814857058" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-9" name="Set value" sid="8311543123587699" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Value">random(1,100)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
                                 <event-block sid="4092245427946472">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1857467378414206" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">33</param>
+                                        <condition id="-21" name="Is between values" sid="9432309913012268" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">0</param>
+                                            <param id="2" name="Upper bound">33</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -413,15 +417,10 @@
                                 </event-block>
                                 <event-block sid="3466659618544304">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5443922403163817" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">66</param>
-                                        </condition>
-                                        <condition id="-8" name="Compare two values" sid="311048067489098" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">33</param>
+                                        <condition id="-21" name="Is between values" sid="1842200516885851" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">34</param>
+                                            <param id="2" name="Upper bound">66</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -441,10 +440,10 @@
                                 </event-block>
                                 <event-block sid="1978629168597055">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="1688972341670838" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">66</param>
+                                        <condition id="-21" name="Is between values" sid="7745796107740445" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">67</param>
+                                            <param id="2" name="Upper bound">101</param>
                                         </condition>
                                     </conditions>
                                     <actions>
@@ -482,92 +481,74 @@
                                     <param id="0" name="Variable">RNGJESUS</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
+                                <action id="-9" name="Set value" sid="182752740259284" type="System">
+                                    <param id="0" name="Variable">SubRNGJESUS</param>
+                                    <param id="1" name="Value">random(1,100)</param>
+                                </action>
                             </actions>
                             <sub-events>
-                                <variable comment="Should be a random number" constant="0" name="randomness" sid="5666315092165746" static="0" type="number">0</variable>
-                                <event-block sid="6246596400257119">
+                                <event-block sid="843814310911574">
                                     <conditions>
-                                        <condition id="-23" name="While" sid="5349962968731798" type="System" />
-                                        <condition id="-14" name="Compare variable" sid="1080422107073544" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
+                                        <condition id="-21" name="Is between values" sid="925196754183144" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">0</param>
+                                            <param id="2" name="Upper bound">33</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="7827761421146163" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Value">random(1,100)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="4696041351554303">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="6131474713103364" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">33</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="6104437082457073" type="System">
+                                        <action id="-3" name="Create object" sid="9085905598290615" type="System">
                                             <param id="0" name="Object to create">KillBlock</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">551</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="3994224757489748" type="KillBlock">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="4765399867571655" type="KillBlock">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="6356151440669814">
+                                <event-block sid="8090188054250614">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="4097684120563094" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">66</param>
-                                        </condition>
-                                        <condition id="-8" name="Compare two values" sid="6866001152921061" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">33</param>
+                                        <condition id="-21" name="Is between values" sid="2947932980901162" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">34</param>
+                                            <param id="2" name="Upper bound">66</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="706057950942619" type="System">
+                                        <action id="-3" name="Create object" sid="4519934717416524" type="System">
                                             <param id="0" name="Object to create">AmmoBox</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">551</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="3394375512940177" type="AmmoBox">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="3765937791056143" type="AmmoBox">
                                             <param id="0" name="Speed">400</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2569776574114477" type="AmmoBox">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1739117250920028" type="AmmoBox">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="9323348128662338">
+                                <event-block sid="6346199573492498">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="8020125078218683" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">66</param>
+                                        <condition id="-21" name="Is between values" sid="3996962365555337" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">67</param>
+                                            <param id="2" name="Upper bound">101</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="3447513105079091" type="System">
+                                        <action id="-3" name="Create object" sid="6307200050858539" type="System">
                                             <param id="0" name="Object to create">Monster</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">551</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="6163139759960915" type="Monster">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="6294475252388555" type="Monster">
                                             <param id="0" name="Speed">400</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="1446062105617321" type="Monster">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="9570105658501129" type="Monster">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
@@ -587,101 +568,74 @@
                                     <param id="0" name="Variable">RNGJESUS</param>
                                     <param id="1" name="Value">0</param>
                                 </action>
-                                <action id="-3" name="Create object" sid="4582935377458942" type="System">
-                                    <param id="0" name="Object to create">KillBlock</param>
-                                    <param id="1" name="Layer">1</param>
-                                    <param id="2" name="X">1500</param>
-                                    <param id="3" name="Y">775</param>
-                                </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="96450258872908" type="KillBlock">
-                                    <param id="0" name="Angle">180</param>
+                                <action id="-9" name="Set value" sid="2336990508630484" type="System">
+                                    <param id="0" name="Variable">SubRNGJESUS</param>
+                                    <param id="1" name="Value">random(1,100)</param>
                                 </action>
                             </actions>
                             <sub-events>
-                                <variable comment="Should be a random number" constant="0" name="randomness" sid="2153359497365353" static="0" type="number">0</variable>
-                                <event-block sid="9904050372913692">
+                                <event-block sid="1420334960300482">
                                     <conditions>
-                                        <condition id="-23" name="While" sid="5343080969481179" type="System" />
-                                        <condition id="-14" name="Compare variable" sid="6919469493634291" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">0</param>
+                                        <condition id="-21" name="Is between values" sid="8513446360299299" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">0</param>
+                                            <param id="2" name="Upper bound">33</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-9" name="Set value" sid="9766778130222944" type="System">
-                                            <param id="0" name="Variable">randomness</param>
-                                            <param id="1" name="Value">random(1,100)</param>
-                                        </action>
-                                    </actions>
-                                </event-block>
-                                <event-block sid="9203747005500047">
-                                    <conditions>
-                                        <condition id="-8" name="Compare two values" sid="3502608989343279" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">33</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions>
-                                        <action id="-3" name="Create object" sid="163823020116793" type="System">
+                                        <action id="-3" name="Create object" sid="3688900359347851" type="System">
                                             <param id="0" name="Object to create">KillBlock</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">775</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2363369865292471" type="KillBlock">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="2322464001972595" type="KillBlock">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="6554027859143307">
+                                <event-block sid="2814044267701829">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="5393441708004569" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">3</param>
-                                            <param id="2" name="Second value">66</param>
-                                        </condition>
-                                        <condition id="-8" name="Compare two values" sid="2607797739814302" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">33</param>
+                                        <condition id="-21" name="Is between values" sid="2997699842000211" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">34</param>
+                                            <param id="2" name="Upper bound">66</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="6353639154863162" type="System">
+                                        <action id="-3" name="Create object" sid="9136020063428105" type="System">
                                             <param id="0" name="Object to create">AmmoBox</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">775</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="5739463696526361" type="AmmoBox">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="6396726432313964" type="AmmoBox">
                                             <param id="0" name="Speed">400</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="537630730745504" type="AmmoBox">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="8746738781147392" type="AmmoBox">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
                                 </event-block>
-                                <event-block sid="5666735765931005">
+                                <event-block sid="8018415996300599">
                                     <conditions>
-                                        <condition id="-8" name="Compare two values" sid="6893980734106775" type="System">
-                                            <param id="0" name="First value">randomness</param>
-                                            <param id="1" name="Comparison">4</param>
-                                            <param id="2" name="Second value">66</param>
+                                        <condition id="-21" name="Is between values" sid="2504220354856073" type="System">
+                                            <param id="0" name="Value">SubRNGJESUS</param>
+                                            <param id="1" name="Lower bound">67</param>
+                                            <param id="2" name="Upper bound">101</param>
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Create object" sid="9671873873774649" type="System">
+                                        <action id="-3" name="Create object" sid="3840743448426893" type="System">
                                             <param id="0" name="Object to create">Monster</param>
                                             <param id="1" name="Layer">1</param>
                                             <param id="2" name="X">1500</param>
                                             <param id="3" name="Y">775</param>
                                         </action>
-                                        <action behavior="Bullet" id="0" name="Set speed" sid="1683634558442982" type="Monster">
+                                        <action behavior="Bullet" id="0" name="Set speed" sid="1884820400099668" type="Monster">
                                             <param id="0" name="Speed">400</param>
                                         </action>
-                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="5895233526831762" type="Monster">
+                                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="660095617750363" type="Monster">
                                             <param id="0" name="Angle">180</param>
                                         </action>
                                     </actions>
