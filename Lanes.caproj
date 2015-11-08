@@ -175,14 +175,27 @@
                         <collision-poly>
                             <point x="0.265101" y="0.265993" />
                             <point x="0.5" y="0.154882" />
-                            <point x="0.734899" y="0.265993" />
-                            <point x="0.818792" y="0.498316" />
-                            <point x="0.939597" y="0.939394" />
+                            <point x="0.681208" y="0.245791" />
+                            <point x="0.704698" y="0.498316" />
+                            <point x="0.711409" y="0.973064" />
                             <point x="0.5" y="1" />
                             <point x="0.0604027" y="0.939394" />
                             <point x="0.181208" y="0.498316" />
                         </collision-poly>
                     </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Bullet" sid="5847312596829991">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="8097081383886549">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9966723119119036" speed="5">
+                    <frame duration="1" hotspotX="0.501818" hotspotY="0.502732" original-source="C:\Users\Chen\git\Codeday Construct\Files\Bulllet.jpg" />
                 </animation>
             </animation-folder>
         </object-type>
