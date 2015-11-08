@@ -5,6 +5,7 @@
     <events>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
+        <variable constant="0" name="RNGJESUS" sid="4368129100967364" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">600</variable>
         <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
         <event-block sid="8786049637894836">
@@ -160,6 +161,77 @@
             <actions>
                 <action id="-1" name="Set X" sid="833195018474841" type="Player">
                     <param id="0" name="X">Self.X + 1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3136787620826519">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="7285767485390496" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="2368451285412136" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Value">random(1,100)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5707482468678261">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="4670234954978654" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">33</param>
+                </condition>
+            </conditions>
+            <actions />
+        </event-block>
+        <comment></comment>
+        <event-block sid="74849428104267">
+            <conditions>
+                <condition id="-18" name="On created" sid="5645996878927096" type="Box" />
+                <condition id="-14" name="Compare variable" sid="4566268876278839" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Comparison">4</param>
+                    <param id="2" name="Value">33</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="1594231592960584" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Comparison">2</param>
+                    <param id="2" name="Value">66</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="4195688667225231" type="Box">
+                    <param id="0" name="X">1280</param>
+                    <param id="1" name="Y">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3386158516185156">
+            <conditions>
+                <condition id="-18" name="On created" sid="6693249667499282" type="Box" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="2815683340380645" type="Box">
+                    <param id="0" name="X">1280</param>
+                    <param id="1" name="Y">341</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5200434490137814">
+            <conditions>
+                <condition id="-8" name="Compare two values" sid="6726740635547802" type="System">
+                    <param id="0" name="First value">RNGJESUS</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Second value">66</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="9659117015018891" type="Box">
+                    <param id="0" name="X">1280</param>
+                    <param id="1" name="Y">683</param>
                 </action>
             </actions>
         </event-block>
