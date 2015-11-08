@@ -5,6 +5,7 @@
     <events>
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
+        <variable constant="0" name="RNGJESUS" sid="6821668473907434" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">600</variable>
         <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
         <event-block sid="8786049637894836">
@@ -73,7 +74,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Set Y" sid="5884294263571456" type="Player">
-                    <param id="0" name="Y">50</param>
+                    <param id="0" name="Y">245</param>
                 </action>
             </actions>
         </event-block>
@@ -85,7 +86,7 @@
             </conditions>
             <actions>
                 <action id="-2" name="Set Y" sid="3218868602113753" type="Player">
-                    <param id="0" name="Y">150</param>
+                    <param id="0" name="Y">511</param>
                 </action>
             </actions>
         </event-block>
@@ -97,7 +98,40 @@
             </conditions>
             <actions>
                 <action id="-2" name="Set Y" sid="5354036489827334" type="Player">
-                    <param id="0" name="Y">250</param>
+                    <param id="0" name="Y">775</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4040467846783697">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="8859440598194989" type="System">
+                    <param id="0" name="Interval (seconds)">NextBlock</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="9612783888458523" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Value">random(1,100)</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4051769952136507">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2857440291562531" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">33</param>
+                </condition>
+                <condition id="-14" name="Compare variable" sid="7442365239075405" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Comparison">1</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="1625611461384135" type="System">
+                    <param id="0" name="Variable">RNGJESUS</param>
+                    <param id="1" name="Value">0</param>
                 </action>
             </actions>
         </event-block>
