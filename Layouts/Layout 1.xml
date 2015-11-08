@@ -77,6 +77,7 @@
                     </properties>
                     <instance-variables>
                         <Health>10</Health>
+                        <Ammo>0</Ammo>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -93,7 +94,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Sprite" uid="2">
+                <instance type="KillBlock" uid="2">
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
@@ -101,7 +102,6 @@
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
-                        <behavior-instance type="DestroyOutsideLayout" />
                         <behavior-instance type="Bullet">
                             <properties>
                                 <speed>400</speed>
@@ -326,7 +326,7 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="List" uid="13">
+                <instance type="HighScoreList" uid="13">
                     <properties>
                         <items></items>
                         <tooltip></tooltip>
@@ -334,8 +334,8 @@
                         <enabled>Yes</enabled>
                         <type>List box</type>
                         <multi-select>No</multi-select>
-                        <auto-font-size>Yes</auto-font-size>
-                        <id-optional></id-optional>
+                        <auto-font-size>No</auto-font-size>
+                        <id-optional>HighScoreBox</id-optional>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -348,6 +348,67 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                    </world>
+                </instance>
+                <instance type="AmmoBox" uid="15">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <behavior-instances>
+                        <behavior-instance type="Bullet">
+                            <properties>
+                                <speed>0</speed>
+                                <acceleration>0</acceleration>
+                                <gravity>0</gravity>
+                                <bounce-off-solids>No</bounce-off-solids>
+                                <set-angle>Yes</set-angle>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>1382</x>
+                        <y>519</y>
+                        <z>0</z>
+                        <width>162</width>
+                        <height>142</height>
+                        <depth>0</depth>
+                        <hotspotX>0.502057612</hotspotX>
+                        <hotspotY>0.502415478</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="AmmoCounter" uid="16">
+                    <properties>
+                        <text>Ammo:</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-27,400,0</font>
+                        <color>0,204,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>58</x>
+                        <y>857</y>
+                        <z>0</z>
+                        <width>221</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
                     </world>
                 </instance>
             </instances>

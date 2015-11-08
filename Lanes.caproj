@@ -21,7 +21,6 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="destroy" version="1">Destroy outside layout</behavior>
     </used-behaviors>
     <used-effects />
     <configurations>
@@ -53,6 +52,7 @@
             <plugin id="Sprite" />
             <instance-variables>
                 <instance-variable name="Health" sid="6578393107418624" type="number" />
+                <instance-variable name="Ammo" sid="2488310935412103" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="20">
@@ -82,12 +82,9 @@
         <object-type name="DistanceDisplay" sid="9037966146610572">
             <plugin id="Text" />
         </object-type>
-        <object-type name="Sprite" sid="6453088317403753">
+        <object-type name="KillBlock" sid="6453088317403753">
             <plugin id="Sprite" />
             <behaviors>
-                <behavior-type name="DestroyOutsideLayout" sid="594996068000301">
-                    <behavior id="destroy" />
-                </behavior-type>
                 <behavior-type name="Bullet" sid="968150189771573">
                     <behavior id="Bullet" />
                 </behavior-type>
@@ -98,8 +95,8 @@
                         <collision-poly>
                             <point x="0.0581819" y="0.116364" />
                             <point x="0.498182" y="0.0218182" />
-                            <point x="0.938182" y="0.0909091" />
-                            <point x="0.92" y="0.661818" />
+                            <point x="0.792727" y="0.145454" />
+                            <point x="0.803636" y="0.738182" />
                             <point x="0.56" y="0.894545" />
                             <point x="0.498182" y="0.876364" />
                             <point x="0.0800001" y="0.698182" />
@@ -135,11 +132,54 @@
         <object-type name="HSText" sid="167957876729851">
             <plugin id="Text" />
         </object-type>
-        <object-type name="List" sid="7814057224474289">
+        <object-type name="HighScoreList" sid="7814057224474289">
             <plugin id="List" />
         </object-type>
         <object-type name="LocalStorage" sid="3435670953844569">
             <plugin id="LocalStorage" />
+        </object-type>
+        <object-type name="Sprite" sid="7428272640808194">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2443318099479381" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AmmoBox" sid="3436535264738179">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="5514564593240308">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2645343712036426" speed="5">
+                    <frame duration="1" hotspotX="0.502058" hotspotY="0.502415" original-source="C:\Users\Chen\git\Codeday Construct\Files\ammoBox.jpg" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="AmmoCounter" sid="6768876622245855">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Monster" sid="5182708782529556">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1112107039351276" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501683" original-source="C:\Users\Chen\git\Codeday Construct\Files\monster.png">
+                        <collision-poly>
+                            <point x="0.265101" y="0.265993" />
+                            <point x="0.5" y="0.154882" />
+                            <point x="0.734899" y="0.265993" />
+                            <point x="0.818792" y="0.498316" />
+                            <point x="0.939597" y="0.939394" />
+                            <point x="0.5" y="1" />
+                            <point x="0.0604027" y="0.939394" />
+                            <point x="0.181208" y="0.498316" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />
