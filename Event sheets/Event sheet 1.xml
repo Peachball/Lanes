@@ -6,8 +6,6 @@
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
         <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">600</variable>
-<<<<<<< HEAD
-=======
         <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
         <event-block sid="8786049637894836">
             <conditions>
@@ -19,7 +17,6 @@
                 </action>
             </actions>
         </event-block>
->>>>>>> origin/surtaz
         <comment>Wrap the scrolling background infinitely by moving it back after it&apos;s scrolled the width of the main image to the left.</comment>
         <event-block sid="8932932219245225">
             <conditions>
