@@ -60,7 +60,18 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="5">
-                    <frame duration="1" hotspotX="0.51875" hotspotY="0.521875" original-source="C:\Users\Admin\Documents\largerpic.png" />
+                    <frame duration="1" hotspotX="0.53125" hotspotY="0.53125" original-source="C:\Users\Admin\Documents\GitHub\Lanes\Animations\Player\Default\New Piskel.gif">
+                        <collision-poly>
+                            <point x="0.40625" y="0.40625" />
+                            <point x="0.5" y="0.375" />
+                            <point x="0.59375" y="0.40625" />
+                            <point x="0.625" y="0.5" />
+                            <point x="0.5625" y="0.5625" />
+                            <point x="0.5" y="0.6875" />
+                            <point x="0.4375" y="0.5625" />
+                            <point x="0.34375" y="0.5" />
+                        </collision-poly>
+                    </frame>
                 </animation>
             </animation-folder>
         </object-type>
