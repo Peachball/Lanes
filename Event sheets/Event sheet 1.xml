@@ -6,7 +6,7 @@
         <variable comment="The total distance run so far, in pixels." constant="0" name="TotalDistance" sid="1259275309318294" static="0" type="number">0</variable>
         <variable comment="Counts up to &apos;NextBlock&apos;, at which point a new block is created." constant="0" name="CurrentDistance" sid="5302964525873012" static="0" type="number">0</variable>
         <variable constant="0" name="RNGJESUS" sid="6821668473907434" static="0" type="number">0</variable>
-        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">600</variable>
+        <variable comment="The distance after which to create the next block." constant="0" name="NextBlock" sid="4215200956761206" static="0" type="number">5</variable>
         <comment>Make sure everything moves left across the screen (since the default 0 degrees is right)</comment>
         <event-block sid="8786049637894836">
             <conditions>
@@ -14,6 +14,9 @@
             </conditions>
             <actions>
                 <action behavior="Bullet" id="3" name="Set angle of motion" sid="2481459789396701" type="TiledBackground">
+                    <param id="0" name="Angle">180</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="6978421071617269" type="Sprite">
                     <param id="0" name="Angle">180</param>
                 </action>
             </actions>
@@ -48,10 +51,6 @@
                 <action id="-10" name="Add to" sid="6599144911191055" type="System">
                     <param id="0" name="Variable">TotalDistance</param>
                     <param id="1" name="Value">5</param>
-                </action>
-                <action id="-23" name="Move at angle" sid="2755942677156927" type="Sprite">
-                    <param id="0" name="Angle">180</param>
-                    <param id="1" name="Distance">5</param>
                 </action>
             </actions>
         </event-block>
@@ -117,6 +116,10 @@
                     <param id="0" name="Variable">RNGJESUS</param>
                     <param id="1" name="Value">random(1,100)</param>
                 </action>
+                <action id="-9" name="Set value" sid="8937160019994879" type="System">
+                    <param id="0" name="Variable">NextBlock</param>
+                    <param id="1" name="Value">NextBlock*9/10</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="4051769952136507">
@@ -140,8 +143,11 @@
                 <action id="-3" name="Create object" sid="7599865199322399" type="System">
                     <param id="0" name="Object to create">Sprite</param>
                     <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">1000</param>
+                    <param id="2" name="X">1200</param>
                     <param id="3" name="Y">245</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="8891997196023379" type="Sprite">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
@@ -166,8 +172,11 @@
                 <action id="-3" name="Create object" sid="7022533167955814" type="System">
                     <param id="0" name="Object to create">Sprite</param>
                     <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">1000</param>
+                    <param id="2" name="X">1200</param>
                     <param id="3" name="Y">511</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="1332395813062554" type="Sprite">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
@@ -187,8 +196,11 @@
                 <action id="-3" name="Create object" sid="4582935377458942" type="System">
                     <param id="0" name="Object to create">Sprite</param>
                     <param id="1" name="Layer">1</param>
-                    <param id="2" name="X">1000</param>
+                    <param id="2" name="X">1200</param>
                     <param id="3" name="Y">775</param>
+                </action>
+                <action behavior="Bullet" id="3" name="Set angle of motion" sid="96450258872908" type="Sprite">
+                    <param id="0" name="Angle">180</param>
                 </action>
             </actions>
         </event-block>
@@ -198,7 +210,12 @@
                     <param id="0" name="Object">Sprite</param>
                 </condition>
             </conditions>
-            <actions />
+            <actions>
+                <action id="-10" name="Set value" sid="3138049005719131" type="Player">
+                    <param id="0" name="Instance variable">Health</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+            </actions>
         </event-block>
     </events>
 </c2eventsheet>
