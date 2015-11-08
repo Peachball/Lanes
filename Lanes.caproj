@@ -48,7 +48,7 @@
                     <behavior id="Bullet" />
                 </behavior-type>
             </behaviors>
-            <texture original-source="C:\Users\Admin\Documents\GitHub\Lanes\Files\final background thing.png" />
+            <texture original-source="C:\Users\Chen\git\Codeday Construct\Files\final background thing.png" />
         </object-type>
         <object-type name="Player" sid="7769317872554959">
             <plugin id="Sprite" />
