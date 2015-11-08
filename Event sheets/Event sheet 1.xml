@@ -40,7 +40,6 @@
                 <action id="0" name="Set text" sid="4305043338334936" type="DistanceDisplay">
                     <param id="0" name="Text">round(TotalDistance)</param>
                 </action>
-<<<<<<< HEAD
                 <action id="-23" name="Move at angle" sid="366918968958033" type="TiledBackground">
                     <param id="0" name="Angle">180</param>
                     <param id="1" name="Distance">5</param>
@@ -48,23 +47,6 @@
                 <action id="-10" name="Add to" sid="6599144911191055" type="System">
                     <param id="0" name="Variable">TotalDistance</param>
                     <param id="1" name="Value">5</param>
-=======
-            </actions>
-        </event-block>
-        <comment>Once CurrentDistance reaches NextBlock, it is time to create a new block.  Create it with a random width and height, then position it just off the right edge of the screen.  Make it move to the left again, then set NextBlock to create another block a random distance after this one.</comment>
-        <event-block sid="3794797121226503">
-            <conditions>
-                <condition id="-14" name="Compare variable" sid="1754156950915027" type="System">
-                    <param id="0" name="Variable">CurrentDistance</param>
-                    <param id="1" name="Comparison">5</param>
-                    <param id="2" name="Value">NextBlock</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action id="-11" name="Subtract from" sid="3041061493350469" type="System">
-                    <param id="0" name="Variable">CurrentDistance</param>
-                    <param id="1" name="Value">NextBlock</param>
->>>>>>> origin/surtaz
                 </action>
             </actions>
         </event-block>
