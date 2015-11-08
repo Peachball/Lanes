@@ -39,9 +39,6 @@
                 <action id="-15" name="Set visible" sid="1441911657598537" type="HSText">
                     <param id="0" name="Visibility">1</param>
                 </action>
-                <action id="0" name="Set text" sid="5454774507797779" type="AmmoCounter">
-                    <param id="0" name="Text">&quot;Bombs: &quot;&amp;Player.Bombs</param>
-                </action>
             </actions>
         </event-block>
         <event-block sid="926729661216478">
@@ -283,6 +280,18 @@
                         <action id="-9" name="Set value" sid="2596797937960362" type="System">
                             <param id="0" name="Variable">Pos</param>
                             <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4079109446470227">
+                    <conditions>
+                        <condition id="4" name="On key code pressed" sid="7684128833377572" type="Keyboard">
+                            <param id="0" name="Keycode">72</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="3066558075261871" type="System">
+                            <param id="0" name="Layout">Help</param>
                         </action>
                     </actions>
                 </event-block>
