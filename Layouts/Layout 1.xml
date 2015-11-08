@@ -78,6 +78,7 @@
                     <instance-variables>
                         <Health>10</Health>
                         <Ammo>0</Ammo>
+                        <Bombs>0</Bombs>
                     </instance-variables>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
@@ -471,7 +472,7 @@
                         <y>857</y>
                         <z>0</z>
                         <width>221</width>
-                        <height>56</height>
+                        <height>38</height>
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
@@ -543,6 +544,33 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="BombCounter" uid="23">
+                    <properties>
+                        <text>Bombs:</text>
+                        <initial-visibility>Visible</initial-visibility>
+                        <font>Arial,-27,400,0</font>
+                        <color>0,204,0</color>
+                        <horizontal-alignment>Left</horizontal-alignment>
+                        <vertical-alignment>Top</vertical-alignment>
+                        <hotspot>Top-left</hotspot>
+                        <wrapping>Word</wrapping>
+                        <line-height>0</line-height>
+                    </properties>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>58</x>
+                        <y>889</y>
+                        <z>0</z>
+                        <width>200</width>
+                        <height>60</height>
+                        <depth>0</depth>
+                        <hotspotX>0</hotspotX>
+                        <hotspotY>0</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>

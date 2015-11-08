@@ -54,6 +54,7 @@
             <instance-variables>
                 <instance-variable name="Health" sid="6578393107418624" type="number" />
                 <instance-variable name="Ammo" sid="2488310935412103" type="number" />
+                <instance-variable name="Bombs" sid="9192526668086348" type="number" />
             </instance-variables>
             <animation-folder>
                 <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5922318689499974" speed="20">
@@ -251,6 +252,9 @@
                     </frame>
                 </animation>
             </animation-folder>
+        </object-type>
+        <object-type name="BombCounter" sid="8740786317451983">
+            <plugin id="Text" />
         </object-type>
     </object-folder>
     <families />

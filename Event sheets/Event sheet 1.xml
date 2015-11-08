@@ -39,6 +39,9 @@
                 <action id="-15" name="Set visible" sid="1441911657598537" type="HSText">
                     <param id="0" name="Visibility">1</param>
                 </action>
+                <action id="0" name="Set text" sid="5454774507797779" type="AmmoCounter">
+                    <param id="0" name="Text">&quot;Bombs: &quot;&amp;Player.Bombs</param>
+                </action>
             </actions>
         </event-block>
         <event-block sid="926729661216478">
@@ -130,6 +133,9 @@
                         <action id="0" name="Set text" sid="3152472386616121" type="AmmoCounter">
                             <param id="0" name="Text">&quot;Ammo: &quot;&amp;Player.Ammo</param>
                         </action>
+                        <action id="0" name="Set text" sid="6450372992658062" type="BombCounter">
+                            <param id="0" name="Text">&quot;Bombs: &quot; &amp; Player.Bombs</param>
+                        </action>
                     </actions>
                 </event-block>
                 <event-block sid="4978395235184779">
@@ -176,6 +182,28 @@
                         <action id="-9" name="Destroy" sid="8469853946478882" type="Monster" />
                     </actions>
                 </event-block>
+                <event-block sid="3487384035606616">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="5940614664650827" type="BulletUpgrade">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="717815714911799" type="BulletUpgrade" />
+                    </actions>
+                </event-block>
+                <event-block sid="3413370770491215">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="211440606495055" type="Bomb">
+                            <param id="0" name="Comparison">2</param>
+                            <param id="1" name="X co-ordinate">-Self.Width</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1396913296916245" type="Bomb" />
+                    </actions>
+                </event-block>
                 <event-block sid="4308788541318451">
                     <conditions>
                         <condition id="-7" name="Compare instance variable" sid="5461538517341171" type="Player">
@@ -185,10 +213,6 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="4" name="Append file" sid="5114339230769184" type="NWjs">
-                            <param id="0" name="Path">&quot;./history.txt&quot;</param>
-                            <param id="1" name="Contents">SpawnData.AsJSON &amp; &quot; &quot; &amp;TotalDistance &amp; &quot;\newline&quot;</param>
-                        </action>
                         <action id="0" name="Set text" sid="4503899660660835" type="DistanceDisplay">
                             <param id="0" name="Text">TotalDistance</param>
                         </action>
@@ -367,6 +391,35 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="5760852883257726">
+                    <conditions>
+                        <condition id="4" name="On key code pressed" sid="9669001617277267" type="Keyboard">
+                            <param id="0" name="Keycode">52</param>
+                        </condition>
+                        <condition id="-7" name="Compare instance variable" sid="9795367424166003" type="Player">
+                            <param id="0" name="Instance variable">Bombs</param>
+                            <param id="1" name="Comparison">4</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="6825745178947266" type="Player">
+                            <param id="0" name="Instance variable">Bombs</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="4458135722332101" type="Bullet" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4801257767978694">
+                            <conditions>
+                                <condition id="-3" name="Is on-screen" sid="2596647268392027" type="KillBlock" />
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="5463497007967921" type="KillBlock" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="4040467846783697">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="8859440598194989" type="System">
@@ -413,22 +466,6 @@
                                     <param id="2" name="X">1500</param>
                                     <param id="3" name="Y">245</param>
                                 </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="4097520541322948" type="KillBlock">
-                                    <param id="0" name="Angle">180</param>
-                                </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="2710325560258642" type="KillBlock">
-                                    <param id="0" name="Speed">OverallSpeed</param>
-                                </action>
-                                <action id="5" name="Push" sid="1224840822913995" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">time</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="9325567391279731" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">1</param>
-                                    <param id="2" name="Axis">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="909515979323709">
@@ -455,22 +492,6 @@
                                     <param id="2" name="X">1500</param>
                                     <param id="3" name="Y">511</param>
                                 </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2188459081944809" type="KillBlock">
-                                    <param id="0" name="Angle">180</param>
-                                </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="6067003075783849" type="KillBlock">
-                                    <param id="0" name="Speed">OverallSpeed</param>
-                                </action>
-                                <action id="5" name="Push" sid="8968834325859436" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">time</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="5896605720106368" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">1</param>
-                                    <param id="2" name="Axis">1</param>
-                                </action>
                             </actions>
                         </event-block>
                         <event-block sid="3841455632887827">
@@ -491,22 +512,6 @@
                                     <param id="1" name="Layer">1</param>
                                     <param id="2" name="X">1500</param>
                                     <param id="3" name="Y">775</param>
-                                </action>
-                                <action behavior="Bullet" id="3" name="Set angle of motion" sid="2460427160873842" type="KillBlock">
-                                    <param id="0" name="Angle">180</param>
-                                </action>
-                                <action behavior="Bullet" id="0" name="Set speed" sid="659094451178379" type="KillBlock">
-                                    <param id="0" name="Speed">OverallSpeed</param>
-                                </action>
-                                <action id="5" name="Push" sid="5446238763305337" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">time</param>
-                                    <param id="2" name="Axis">0</param>
-                                </action>
-                                <action id="5" name="Push" sid="1334364945933189" type="SpawnData">
-                                    <param id="0" name="Where">1</param>
-                                    <param id="1" name="Value">1</param>
-                                    <param id="2" name="Axis">1</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -914,7 +919,7 @@
                 <event-block sid="3494328190178371">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="3004051528409245" type="System">
-                            <param id="0" name="Interval (seconds)">random(1,2)</param>
+                            <param id="0" name="Interval (seconds)">random(5,6)</param>
                         </condition>
                         <condition id="-14" name="Compare variable" sid="9667311050843291" type="System">
                             <param id="0" name="Variable">RNGJESUS</param>
@@ -1008,7 +1013,7 @@
                             <param id="2" name="Value">0</param>
                         </condition>
                         <condition id="-6" name="Every X seconds" sid="5319319770839685" type="System">
-                            <param id="0" name="Interval (seconds)">random(4,5)</param>
+                            <param id="0" name="Interval (seconds)">random(5,6)</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -1169,18 +1174,12 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="-9" name="Destroy" sid="5272929468570343" type="Bullet" />
+                        <action id="-11" name="Add to" sid="5956817191354959" type="Player">
+                            <param id="0" name="Instance variable">Bombs</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="3771962256828813" type="Bomb" />
                     </actions>
-                    <sub-events>
-                        <event-block sid="9948796847307093">
-                            <conditions>
-                                <condition id="-3" name="Is on-screen" sid="9622012925634347" type="KillBlock" />
-                            </conditions>
-                            <actions>
-                                <action id="-9" name="Destroy" sid="2852362991290589" type="KillBlock" />
-                            </actions>
-                        </event-block>
-                    </sub-events>
                 </event-block>
                 <event-block sid="8151331712852345">
                     <conditions>
